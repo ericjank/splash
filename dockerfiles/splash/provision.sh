@@ -101,8 +101,8 @@ install_pyqt5 () {
     ${_PYTHON} --version && \
     mkdir -p /downloads && \
     chmod a+rw /downloads && \
-    curl -L -o /downloads/sip.tar.gz http://sourceforge.net/projects/pyqt/files/sip/sip-${SPLASH_SIP_VERSION}/sip-${SPLASH_SIP_VERSION}.tar.gz/download && \
-    curl -L -o /downloads/pyqt5.tar.gz http://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-${SPLASH_PYQT_VERSION}/PyQt-gpl-${SPLASH_PYQT_VERSION}.tar.gz/download && \
+    curl -L -o /downloads/sip.tar.gz https://versaweb.dl.sourceforge.net/project/pyqt/sip/sip-${SPLASH_SIP_VERSION}/sip-${SPLASH_SIP_VERSION}.tar.gz && \
+    curl -L -o /downloads/pyqt5.tar.gz https://versaweb.dl.sourceforge.net/project/pyqt/PyQt5/PyQt-${SPLASH_PYQT_VERSION}/PyQt-gpl-${SPLASH_PYQT_VERSION}.tar.gz && \
     #curl -L -o /downloads/sip.tar.gz http://sourceforge.net/projects/pyqt/files/sip/sip-${SPLASH_SIP_VERSION}/sip-${SPLASH_SIP_VERSION}.tar.gz && \
     #curl -L -o /downloads/pyqt5.tar.gz http://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-${SPLASH_PYQT_VERSION}/PyQt-gpl-${SPLASH_PYQT_VERSION}.tar.gz && \
     # TODO: check downloads
