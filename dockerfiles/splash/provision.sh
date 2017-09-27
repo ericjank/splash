@@ -83,22 +83,46 @@ install_builddeps () {
     add-apt-repository -y ppa:pi-rho/security && \
     apt-get update -q && \
     apt-get install -y --no-install-recommends \
-        python3 \
         python3-dev \
         python3-pip \
         build-essential \
         libre2-dev \
         liblua5.2-dev \
         libsqlite3-dev \
-        zlib1g \
         zlib1g-dev \
-        netbase \
-        ca-certificates \
-        pkg-config \
         libjpeg-turbo8-dev \
         libgl1-mesa-dev \
         libglu1-mesa-dev \
         mesa-common-dev
+
+    apt-get install -y --no-install-recommends \
+        xvfb \
+        libjpeg-turbo8-dev \
+        libgl1-mesa-dev \
+        libglu1-mesa-dev \
+        mesa-common-dev \
+        libfontconfig1-dev \
+        libicu-dev \
+        libpng12-dev \
+        libxslt1-dev \
+        libxml2-dev \
+        libhyphen-dev \
+        libgbm1 \
+        libxcb-image0 \
+        libxcb-icccm4 \
+        libxcb-keysyms1 \
+        libxcb-render-util0 \
+        libxi6 \
+        libxcomposite-dev \
+        libxrender-dev \
+        libgstreamer1.0-dev \
+        libgstreamer-plugins-base1.0-dev \
+        libgstreamer-plugins-good1.0-dev \
+        gstreamer1.0-plugins-good \
+        gstreamer1.0-x \
+        gstreamer1.0-libav \
+        webp \
+        rsync
 }
 
 install_pyqt5 () {
@@ -124,9 +148,15 @@ install_pyqt5 () {
     # PyQt5
     tar xzf /downloads/pyqt5.tar.gz --keep-newer-files  && \
     pushd PyQt-gpl-${SPLASH_PYQT_VERSION}  && \
-    ${_PYTHON} configure.py -c --qmake "${SPLASH_QT_PATH}/bin/qmake" --verbose \
+    ${_PYTHON} configure.py -c \
+        #--qmake "${SPLASH_QT_PATH}/bin/qmake" 
+        --verbose \
         --confirm-license \
         --no-designer-plugin \
+        --no-qml-plugin \
+        --no-python-dbus \
+        #--confirm-license \
+        #--no-designer-plugin \
         -e QtCore \
         -e QtGui \
         -e QtWidgets \
