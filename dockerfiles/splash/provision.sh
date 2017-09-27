@@ -83,13 +83,18 @@ install_builddeps () {
     add-apt-repository -y ppa:pi-rho/security && \
     apt-get update -q && \
     apt-get install -y --no-install-recommends \
+        python3 \
         python3-dev \
         python3-pip \
         build-essential \
         libre2-dev \
         liblua5.2-dev \
         libsqlite3-dev \
+        zlib1g \
         zlib1g-dev \
+        netbase \
+        ca-certificates \
+        pkg-config
         libjpeg-turbo8-dev \
         libgl1-mesa-dev \
         libglu1-mesa-dev \
