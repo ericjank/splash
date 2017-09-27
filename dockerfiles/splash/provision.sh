@@ -94,7 +94,7 @@ install_builddeps () {
         zlib1g-dev \
         netbase \
         ca-certificates \
-        pkg-config
+        pkg-config \
         libjpeg-turbo8-dev \
         libgl1-mesa-dev \
         libglu1-mesa-dev \
