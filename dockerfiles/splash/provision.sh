@@ -149,14 +149,12 @@ install_pyqt5 () {
     tar xzf /downloads/pyqt5.tar.gz --keep-newer-files  && \
     pushd PyQt-gpl-${SPLASH_PYQT_VERSION}  && \
     ${_PYTHON} configure.py -c \
-        #--qmake "${SPLASH_QT_PATH}/bin/qmake" 
+        --qmake "${SPLASH_QT_PATH}/bin/qmake" \
         --verbose \
         --confirm-license \
         --no-designer-plugin \
         --no-qml-plugin \
         --no-python-dbus \
-        #--confirm-license \
-        #--no-designer-plugin \
         -e QtCore \
         -e QtGui \
         -e QtWidgets \
